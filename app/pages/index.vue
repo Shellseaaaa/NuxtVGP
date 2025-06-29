@@ -1,10 +1,96 @@
 <template>
 	<v-container>
 		<h2>
-			<v-icon icon="mdi-vuetify" />
-			Starter Template
+			<v-icon icon="mdi-rocket-launch" />
+			SpaceX Explorer
 		</h2>
-		<h5>Nuxt 3 / Vuetify / Graphql / Pinia</h5>
+		<h5>Nuxt 3 / Vuetify / GraphQL / Pinia</h5>
+
+		<!-- Welcome Section -->
+		<v-card class="mx-auto my-12" max-width="800">
+			<v-card-title class="text-blue">
+				<v-icon icon="mdi-rocket" class="me-2" />
+				Welcome to SpaceX Explorer
+			</v-card-title>
+			<v-card-text>
+				<div class="text-body-1">
+					Explore SpaceX launches, rocket details, and manage your favorite rockets. 
+					This application demonstrates modern web development with Nuxt 3, Vuetify, GraphQL, and Pinia.
+				</div>
+			</v-card-text>
+			<v-card-actions>
+				<v-btn color="primary" @click="navigateTo('/launches')">
+					<v-icon icon="mdi-rocket" class="me-2" />
+					Explore Launches
+				</v-btn>
+				<v-btn color="secondary" variant="outlined" @click="navigateTo('/favorites')">
+					<v-icon icon="mdi-heart" class="me-2" />
+					View Favorites
+				</v-btn>
+			</v-card-actions>
+		</v-card>
+
+		<!-- Launch Countdown -->
+		<LaunchCountdown />
+
+		<!-- Features Section -->
+		<v-row>
+			<v-col cols="12" md="4">
+				<v-card class="mx-auto my-12" max-width="374">
+					<v-card-title class="text-blue">
+						<v-icon icon="mdi-rocket" class="me-2" />
+						Launch Missions
+					</v-card-title>
+					<v-card-text>
+						Browse all SpaceX launches with detailed information including mission names, 
+						launch dates, sites, and rocket specifications. Filter by year and sort by date.
+					</v-card-text>
+					<v-card-actions>
+						<v-btn color="primary" @click="navigateTo('/launches')">
+							View Launches
+						</v-btn>
+					</v-card-actions>
+				</v-card>
+			</v-col>
+
+			<v-col cols="12" md="4">
+				<v-card class="mx-auto my-12" max-width="374">
+					<v-card-title class="text-blue">
+						<v-icon icon="mdi-heart" class="me-2" />
+						Favorite Rockets
+					</v-card-title>
+					<v-card-text>
+						Save your favorite rockets and access them anytime. 
+						Manage your collection with easy add/remove functionality.
+					</v-card-text>
+					<v-card-actions>
+						<v-btn color="primary" @click="navigateTo('/favorites')">
+							View Favorites
+						</v-btn>
+					</v-card-actions>
+				</v-card>
+			</v-col>
+
+			<v-col cols="12" md="4">
+				<v-card class="mx-auto my-12" max-width="374">
+					<v-card-title class="text-blue">
+						<v-icon icon="mdi-chart-line" class="me-2" />
+						Real-time Data
+					</v-card-title>
+					<v-card-text>
+						All data is fetched in real-time from the SpaceX GraphQL API. 
+						Experience the latest launch information and rocket details.
+					</v-card-text>
+					<v-card-actions>
+						<v-btn color="primary" @click="navigateTo('/launches')">
+							Explore Data
+						</v-btn>
+					</v-card-actions>
+				</v-card>
+			</v-col>
+		</v-row>
+
+		<!-- Example Pinia Store -->
 		<h3 class="my-5">
 			Example Pinia
 			<v-chip color="blue">useCounter</v-chip>
@@ -25,59 +111,10 @@
 			<v-card-actions><v-btn color="blue" @click="store.increment()">Increment</v-btn></v-card-actions>
 		</v-card>
 
+		<!-- Example GraphQL Data -->
 		<h3 class="my-5">
-			Example Vuetify
-			<v-chip color="blue">Card</v-chip>
-		</h3>
-		<v-card class="mx-auto my-12" max-width="374">
-			<template #progress>
-				<v-progress-linear color="deep-purple" height="10" indeterminate />
-			</template>
-
-			<v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
-
-			<v-card-title>Cafe Badilico</v-card-title>
-
-			<v-card-text>
-				<v-row align="center" class="mx-0">
-					<ClientOnly>
-						<v-rating :value="4.5" color="amber" dense half-increments readonly size="14" />
-						<div class="grey--text ms-4">4.5 (413)</div>
-					</ClientOnly>
-				</v-row>
-
-				<div class="my-4 text-subtitle-1">$ • Italian, Cafe</div>
-
-				<div>
-					Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio
-					seating.
-				</div>
-			</v-card-text>
-
-			<v-divider class="mx-4" />
-
-			<v-card-title>Tonight's availability</v-card-title>
-
-			<v-card-text>
-				<v-chip-group v-model="selection" active-class="deep-purple accent-4 white--text" column>
-					<v-chip>5:30PM</v-chip>
-
-					<v-chip>7:30PM</v-chip>
-
-					<v-chip>8:00PM</v-chip>
-
-					<v-chip>9:00PM</v-chip>
-				</v-chip-group>
-			</v-card-text>
-
-			<v-card-actions>
-				<v-btn color="deep-purple lighten-2">Reserve</v-btn>
-			</v-card-actions>
-		</v-card>
-		<h3 class="my-5">
-			Example Vuetify
-			<v-chip color="blue">SimpleTable</v-chip>
-			<v-chip color="orange">Data from spaceX graphql</v-chip>
+			Example GraphQL
+			<v-chip color="orange">SpaceX Ships Data</v-chip>
 		</h3>
 		<p>There are {{ ships?.length || 0 }} ships.</p>
 		<v-table>
