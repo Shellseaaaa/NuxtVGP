@@ -14,6 +14,9 @@ importers:
       '@pinia/nuxt':
         specifier: ^0.5.1
         version: 0.5.5(magicast@0.3.5)(rollup@4.25.0)(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))
+      pinia-plugin-state-persistence:
+        specifier: ^1.10.2
+        version: 1.10.2(pinia@2.2.6(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)))
       sass:
         specifier: ^1.68.0
         version: 1.80.6
@@ -3620,6 +3623,11 @@ packages:
     engines: {node: '>=0.10'}
     hasBin: true
 
+  pinia-plugin-state-persistence@1.10.2:
+    resolution: {integrity: sha512-mGjva6OaskNsO8O1mNP+J9DdyYtgvUkbJSVD+g2q2w9eXJ9wfhKwVKPvCv/P532RQopt1MVeLHmZcl7+cDI1OQ==}
+    peerDependencies:
+      pinia: ^2.3.0 || ^3.0.0
+
   pinia@2.2.6:
     resolution: {integrity: sha512-vIsR8JkDN5Ga2vAxqOE2cJj4VtsHnzpR1Fz30kClxlh0yCHfec6uoMeM3e/ddqmwFUejK3NlrcQa/shnpyT4hA==}
     peerDependencies:
@@ -6402,7 +6410,7 @@ snapshots:
 
   '@vue/shared@3.5.12': {}
 
-  '@vuetify/loader-shared@2.0.3(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.4(typescript@5.6.3)(vite-plugin-vuetify@2.0.4)(vue@3.5.12(typescript@5.6.3)))':
+  '@vuetify/loader-shared@2.0.3(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.4)':
     dependencies:
       upath: 2.0.1
       vue: 3.5.12(typescript@5.6.3)
@@ -9094,6 +9102,10 @@ snapshots:
 
   pidtree@0.6.0: {}
 
+  pinia-plugin-state-persistence@1.10.2(pinia@2.2.6(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))):
+    dependencies:
+      pinia: 2.2.6(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))
+
   pinia@2.2.6(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3)):
     dependencies:
       '@vue/devtools-api': 6.6.4
@@ -10218,7 +10230,7 @@ snapshots:
 
   vite-plugin-vuetify@2.0.4(vite@5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.4):
     dependencies:
-      '@vuetify/loader-shared': 2.0.3(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.4(typescript@5.6.3)(vite-plugin-vuetify@2.0.4)(vue@3.5.12(typescript@5.6.3)))
+      '@vuetify/loader-shared': 2.0.3(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.4)
       debug: 4.3.7(supports-color@9.4.0)
       upath: 2.0.1
       vite: 5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0)
